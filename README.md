@@ -16,6 +16,8 @@ This project implements two process scheduling algorithms: **Round Robin (RR)** 
   - [Displaying Process Information](#displaying-process-information)
 - [Output](#output)
   - [Gantt Charts](#gantt-charts)
+  - [Terminal Output](#terminal-output)
+  - [Comparison Charts](#comparison-charts)
 
 ## Introduction
 
@@ -129,6 +131,7 @@ For instance, the Gantt chart stored as `gantt_charts/gantt_chart_1.png`, which 
 ![Gantt Chart Example](example_charts/gantt_chart_example1.png)
 Similarly, the Gantt chart stored as `gantt_charts/gantt_chart_2.png`, associated with the Round Robin (RR) algorithm and a quantum of 2, is displayed below:
 ![Gantt Chart Example](example_charts/gantt_chart_example2.png)
+## Terminal Output
 The corresponding terminal output might appear as follows:
 ```angular2html
 adaptive round robin, starting quantum= 2
@@ -160,7 +163,8 @@ Additionally, a summary table is generated, showing the process details and calc
 +-------+----------------+--------------+-------------------+-------------------+----------------+
 mean turnaround time: 39.0, mean waiting time: 27.5
 ```
-The chart comparing the metrics across different runs is as follows:
+## Comparison Charts
+The chart comparing the metrics across different runs is shown below:
 ![Gantt Chart Example](example_charts/Comparison_Example.png)
 
 
