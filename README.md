@@ -7,7 +7,7 @@ This project implements two process scheduling algorithms: **Round Robin (RR)** 
 - [Introduction](#introduction)
 - [Requirements](#requirements)
 - [Usage](#usage)
-- [Functions](#functions)
+- [Functionality](#functionality)
   - [Process Class](#process-class)
   - [Round Robin](#round-robin)
   - [Adaptive Round Robin](#adaptive-round-robin)
@@ -55,7 +55,7 @@ pip install matplotlib tabulate
    - The program will print the scheduling details of each process, including the **completion time**, **waiting time**, and **turnaround time**.
    - The generated Gantt charts will be saved as images in the `gantt_charts/` directory.
 
-# Functions
+# Functionality
 
 ## Process Class
 This class represents a process in the system with the following attributes:
@@ -125,5 +125,47 @@ gantt_charts/gantt_chart_1.png
 gantt_charts/gantt_chart_2.png
 ...
 ```
+For instance, the Gantt chart stored as `gantt_charts/gantt_chart_1.png`, which corresponds to the Adaptive Round Robin (AAR) algorithm with a quantum of 2, appears as follows:
+![Gantt Chart Example](example_charts/gantt_chart_example1.png)
+Similarly, the Gantt chart stored as `gantt_charts/gantt_chart_2.png`, associated with the Round Robin (RR) algorithm and a quantum of 2, is displayed below:
+![Gantt Chart Example](example_charts/gantt_chart_example2.png)
+The corresponding terminal output might appear as follows:
+```angular2html
+adaptive round robin, starting quantum= 2
+Round 1
+0->2: P1 ran for 2 units of time. remaining: 14.
+2->4: P2 ran for 2 units of time. remaining: 6.
+4->6: P3 ran for 2 units of time. remaining: 10.
+6->8: P4 ran for 2 units of time. remaining: 8.
+quantum increases to 3.
+.
+.
+.
+Round 6
+44->46: P1 ran for 2 units. process completed.
+quantum decreases to 2.
+```
+Additionally, a summary table is generated, showing the process details and calculated metrics:
+```angular2html
++-------+----------------+--------------+-------------------+-------------------+----------------+
+|   PID |   Arrival Time |   Burst Time |   Completion Time |   Turnaround Time |   Waiting Time |
++=======+================+==============+===================+===================+================+
+|     1 |              0 |           16 |                46 |                46 |             30 |
++-------+----------------+--------------+-------------------+-------------------+----------------+
+|     2 |              0 |            8 |                27 |                27 |             19 |
++-------+----------------+--------------+-------------------+-------------------+----------------+
+|     3 |              0 |           12 |                41 |                41 |             29 |
++-------+----------------+--------------+-------------------+-------------------+----------------+
+|     4 |              0 |           10 |                42 |                42 |             32 |
++-------+----------------+--------------+-------------------+-------------------+----------------+
+mean turnaround time: 39.0, mean waiting time: 27.5
+```
+The chart comparing the metrics across different runs is as follows:
+![Gantt Chart Example](example_charts/Comparison_Example.png)
+
+
+
+
+
 
 
